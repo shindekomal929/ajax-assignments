@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+    <div class="container">
+        <p id="changehere"><h1>This line is going to be change...</h1></p>
+        <button class="brt brt-primary btnclick">click</button>
+    </div>    
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.btnclick').click(function(){
+                $.get('get.html',function(data,status){
+                    $('#changehere').html(data);
+                    alert(status);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
